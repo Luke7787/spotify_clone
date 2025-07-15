@@ -3,7 +3,7 @@ import { Router } from "express";
 const router = Router();
 
 router.get("/", (req, res) => {
-    res.send("album route with GET method");
+    res.send("Album route with GET method");
 });
 
 export default router;
