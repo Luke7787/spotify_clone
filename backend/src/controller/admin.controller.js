@@ -17,17 +17,19 @@ export const createSong = async (req, res) => {
             imageUrl,
             duration,
             albumId: albumId || null 
-        })
+        });
 
         await song.save()
         
+        // if song belong to an album, update the album's songs array
         if(albumId){
             await Album.findByIdAndUpdate(albumId, {
-                
-            })
+                $push:{songs: song._id}
+            });
         }
-
+        res.status(201).json(song)
     } catch (error) {
-        
+        console.log("Error in createSong", error);
+        res.status(500).json({ message: "Internal server error", error});
     }
 }
