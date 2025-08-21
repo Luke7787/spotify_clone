@@ -1,0 +1,1 @@
+export const getAllAlbums = (req, res) => {}
