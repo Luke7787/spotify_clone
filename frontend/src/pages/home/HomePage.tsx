@@ -1,6 +1,8 @@
+import TopBar from "@/components/Topbar";
+
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div><TopBar/></div>
   );
 };
 
